@@ -40,32 +40,90 @@ const AnalysisSection = () => {
               <CardContent className="pt-6 space-y-6">
                 <div>
                   <h3 className="font-heading font-semibold text-xl mb-3">
-                    Decomposição da Tarefa
+                    Meta: Entrar em contato rapidamente com professores e setores acadêmicos
                   </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Análise hierárquica das ações do usuário, identificando cada etapa 
-                    necessária para completar a tarefa de forma eficiente.
+                  <p className="text-muted-foreground mb-6">
+                    Persona: Cauã (Usuário do App INATEL)
                   </p>
-                  <div className="grid gap-3">
-                    {[
-                      "Identificação do objetivo do usuário",
-                      "Mapeamento de subtarefas necessárias",
-                      "Análise de pontos de decisão críticos",
-                      "Identificação de possíveis erros e recuperação",
-                      "Otimização do caminho crítico",
-                    ].map((item, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
-                      >
-                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                          <span className="text-primary font-semibold text-sm">
-                            {index + 1}
-                          </span>
-                        </div>
-                        <span className="text-foreground">{item}</span>
+                  
+                  <div className="space-y-4">
+                    <div className="border-l-4 border-primary pl-4 py-2 bg-muted/30 rounded-r-lg">
+                      <h4 className="font-semibold text-lg mb-2">0. Realizar Contato com Professor ou Setor</h4>
+                    </div>
+
+                    <div className="ml-4 space-y-3">
+                      <div className="border-l-2 border-primary/50 pl-4 py-2">
+                        <h5 className="font-semibold mb-2">1. Acessar a Funcionalidade de Contatos</h5>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li className="flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>1.1. Abrir o menu principal (ou navegar para a home)</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>1.2. Tocar no botão "Contatos" (ou "Ramal", "Agenda", etc.)</span>
+                          </li>
+                        </ul>
                       </div>
-                    ))}
+
+                      <div className="border-l-2 border-accent/50 pl-4 py-2">
+                        <h5 className="font-semibold mb-2">2. Localizar o Contato Desejado</h5>
+                        <div className="space-y-3">
+                          <div className="ml-2">
+                            <p className="font-medium text-sm mb-1">2.1. Buscar por Professor</p>
+                            <ul className="space-y-1 text-sm text-muted-foreground">
+                              <li className="flex items-start gap-2">
+                                <span className="text-accent mt-1">→</span>
+                                <span>2.1.1. Selecionar a aba/filtro "Professores"</span>
+                              </li>
+                              <li className="flex items-start gap-2">
+                                <span className="text-accent mt-1">→</span>
+                                <span>2.1.2. Digitar o nome do professor na barra de busca</span>
+                              </li>
+                              <li className="flex items-start gap-2">
+                                <span className="text-accent mt-1">→</span>
+                                <span>2.1.3. Tocar no nome do professor nos resultados</span>
+                              </li>
+                            </ul>
+                          </div>
+                          <div className="ml-2">
+                            <p className="font-medium text-sm mb-1">2.2. Buscar por Setor Acadêmico</p>
+                            <ul className="space-y-1 text-sm text-muted-foreground">
+                              <li className="flex items-start gap-2">
+                                <span className="text-accent mt-1">→</span>
+                                <span>2.2.1. Selecionar a aba/filtro "Setores"</span>
+                              </li>
+                              <li className="flex items-start gap-2">
+                                <span className="text-accent mt-1">→</span>
+                                <span>2.2.2. Rolar a lista de setores (ex: "Secretaria", "Coordenação") ou usar a busca</span>
+                              </li>
+                              <li className="flex items-start gap-2">
+                                <span className="text-accent mt-1">→</span>
+                                <span>2.2.3. Tocar no nome do setor desejado</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-l-2 border-primary/50 pl-4 py-2">
+                        <h5 className="font-semibold mb-2">3. Iniciar a Comunicação</h5>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li className="flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>A. Enviar E-mail</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>B. Ligar para o Ramal</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>C. Iniciar chat interno</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -74,9 +132,9 @@ const AnalysisSection = () => {
                     Coerência com o Desenvolvimento
                   </h3>
                   <p className="text-muted-foreground">
-                    O framework de análise está totalmente alinhado com o desenvolvimento 
-                    das telas, garantindo que cada elemento visual corresponda a uma 
-                    funcionalidade mapeada na análise de tarefas.
+                    A análise de tarefas está mapeada diretamente para as telas desenvolvidas, 
+                    com cada passo da hierarquia correspondendo a elementos visuais e interações 
+                    específicas na interface do aplicativo.
                   </p>
                 </div>
               </CardContent>
