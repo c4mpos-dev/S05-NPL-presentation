@@ -5,7 +5,7 @@ const UserStorySection = () => {
   return (
     <section id="user-story" className="section-padding bg-muted/30">
       <div className="container-width">
-        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
+        <div className="text-center max-w-3xl mx-auto mb-10 animate-fade-in-up">
           <h2 className="font-heading font-bold text-3xl md:text-5xl mb-4">
             User Story
           </h2>
@@ -16,10 +16,10 @@ const UserStorySection = () => {
 
         <div className="max-w-4xl mx-auto">
           <Card className="border-2 border-primary/20 shadow-elegant animate-fade-in-up">
-            <CardHeader className="bg-gradient-to-r from-primary/5 to-accent/5">
-              <CardTitle className="font-heading text-2xl md:text-3xl text-center">
-                História do Usuário
-              </CardTitle>
+            <CardHeader className="flex text-center bg-gradient-to-r from-primary/5 to-accent/5">
+              <span>	
+                Como Cauã, eu quero entrar em contato rapidamente com professores e setores acadêmicos no Aplicativo Inatel, para que eu consiga resolver pendências e dúvidas sem precisar procurar em vários lugares.
+              </span>
             </CardHeader>
             <CardContent className="pt-8 space-y-8">
               <div className="flex items-start gap-4 p-6 rounded-lg bg-background border border-border hover:border-primary/50 transition-all group">

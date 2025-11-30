@@ -16,8 +16,15 @@ const Header = () => {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
+    const headerOffset = 30;
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
       setIsMobileMenuOpen(false);
     }
   };
@@ -41,19 +48,11 @@ const Header = () => {
     >
       <nav className="container-width px-4 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg md:text-xl">I</span>
-            </div>
-            <div>
-              <h1 className="font-heading font-bold text-lg md:text-xl text-foreground">
-                INATEL
-              </h1>
-              <p className="text-xs text-muted-foreground hidden sm:block">
-                Projeto Acadêmico
-              </p>
-            </div>
-          </div>
+          <img
+            src="/Inatel.png"
+            alt="INATEL Logo"
+            className="h-8 w-8 md:h-8 md:w-24"
+          />
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
@@ -62,7 +61,7 @@ const Header = () => {
                 key={item.id}
                 variant="ghost"
                 onClick={() => scrollToSection(item.id)}
-                className="text-sm font-medium hover:text-primary transition-colors"
+                className="text-sm font-medium hover:text-white transition-colors"
               >
                 {item.label}
               </Button>
@@ -86,7 +85,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-fade-in-up">
+          <div className="lg:hidden py-4 border-t border-border animate-fade-in-up bg-white">
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <Button

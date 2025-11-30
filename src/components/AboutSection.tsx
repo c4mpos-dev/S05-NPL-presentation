@@ -6,22 +6,22 @@ const AboutSection = () => {
     {
       icon: Users,
       title: "Centrado no Usuário",
-      description: "Design focado nas necessidades e expectativas dos usuários do App INATEL",
+      description: "Design focado nas necessidades e expectativas dos usuários do App INATEL.",
     },
     {
       icon: Target,
       title: "Objetivos Claros",
-      description: "Funcionalidade desenvolvida com metas bem definidas e mensuráveis",
+      description: "Funcionalidade desenvolvida com metas bem definidas.",
     },
     {
       icon: Lightbulb,
       title: "Solução Inovadora",
-      description: "Abordagem criativa para resolver problemas reais dos usuários",
+      description: "Abordagem criativa para resolver problemas reais dos usuários.",
     },
     {
       icon: Code,
       title: "Implementação Completa",
-      description: "Experiência de uso completa, simulando a tarefa de ponta a ponta",
+      description: "Experiência de uso completa, simulando a tarefa.",
     },
   ];
 
@@ -33,8 +33,8 @@ const AboutSection = () => {
             Sobre o Projeto
           </h2>
           <p className="text-lg text-muted-foreground">
-            Este projeto foi desenvolvido como parte do curso de Interface de Usuário 
-            no INATEL, com foco em criar uma experiência completa e funcional.
+            Este projeto foi desenvolvido como parte do curso de Interação Homem Máquina
+            do INATEL.
           </p>
         </div>
 

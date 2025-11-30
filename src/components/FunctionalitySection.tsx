@@ -1,10 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, CheckCircle2 } from "lucide-react";
+import { ExternalLink, CheckCircle2 } from "lucide-react"
 
 const FunctionalitySection = () => {
   const requirements = [
-    "Experiência de uso completa de ponta a ponta",
+    "Experiência de uso completa",
     "Simulação de input de dados e processamento",
     "Feedback visual para o usuário",
     "Grid responsivo e design adaptável",
@@ -12,27 +12,31 @@ const FunctionalitySection = () => {
     "Animações e interações fluidas",
   ];
 
+  const redirectToProject = () => {
+    window.open("https://s05-npl.vercel.app/", "_blank");
+  };
+
   return (
     <section id="functionality" className="section-padding">
       <div className="container-width">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in-up">
             <h2 className="font-heading font-bold text-3xl md:text-5xl mb-6">
-              Justificativa da Nova Funcionalidade
+              Nova Funcionalidade
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               A nova funcionalidade foi desenvolvida com base em uma análise detalhada 
               da persona e suas necessidades específicas dentro do ecossistema do App INATEL. 
               O objetivo é proporcionar uma experiência mais intuitiva e eficiente, 
-              resolvendo problemas identificados através de pesquisa com usuários.
+              resolvendo problemas identificados.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Através da implementação desta funcionalidade, buscamos melhorar 
+              Através da implementação desta funcionalidade, busco melhorar 
               significativamente a jornada do usuário, reduzindo o tempo necessário 
-              para realizar tarefas comuns e aumentando a satisfação geral com o aplicativo.
+              para realizar tarefas comuns.
             </p>
-            <Button size="lg" className="group shadow-elegant">
-              Ver Projeto Completo
+            <Button size="lg" className="group shadow-elegant" onClick={redirectToProject}>
+              Ver Projeto
               <ExternalLink className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
             </Button>
           </div>
