@@ -28,11 +28,11 @@ const UserStorySection = () => {
                 </div>
                 <div>
                   <h3 className="font-heading font-semibold text-xl mb-2">
-                    Como usuário do App INATEL
+                    Como Cauã (usuário do App INATEL)
                   </h3>
                   <p className="text-muted-foreground">
-                    Persona definida com base em pesquisa e análise de comportamento, 
-                    representando o público-alvo principal da aplicação.
+                    Persona: Cauã, estudante do INATEL que precisa se comunicar 
+                    frequentemente com professores e setores acadêmicos.
                   </p>
                 </div>
               </div>
@@ -43,12 +43,11 @@ const UserStorySection = () => {
                 </div>
                 <div>
                   <h3 className="font-heading font-semibold text-xl mb-2">
-                    Eu quero poder...
+                    Eu quero entrar em contato rapidamente com professores e setores acadêmicos
                   </h3>
                   <p className="text-muted-foreground">
-                    Acessar e utilizar a nova funcionalidade de forma intuitiva, 
-                    sem necessidade de treinamento prévio, seguindo padrões familiares 
-                    de interface.
+                    Necessidade de localizar e acessar informações de contato (e-mail, ramal, chat) 
+                    de forma ágil e centralizada no Aplicativo Inatel.
                   </p>
                 </div>
               </div>
@@ -59,12 +58,11 @@ const UserStorySection = () => {
                 </div>
                 <div>
                   <h3 className="font-heading font-semibold text-xl mb-2">
-                    Para que eu possa...
+                    Para que eu consiga resolver pendências e dúvidas
                   </h3>
                   <p className="text-muted-foreground">
-                    Realizar minhas tarefas de forma mais eficiente, economizando tempo 
-                    e obtendo resultados mais precisos, melhorando minha experiência geral 
-                    com o aplicativo.
+                    Sem precisar procurar em vários lugares, economizando tempo e 
+                    facilitando a comunicação acadêmica no dia a dia.
                   </p>
                 </div>
               </div>
