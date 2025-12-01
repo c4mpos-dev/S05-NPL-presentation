@@ -5,7 +5,6 @@ import FunctionalitySection from "@/components/FunctionalitySection";
 import UserStorySection from "@/components/UserStorySection";
 import AnalysisSection from "@/components/AnalysisSection";
 import WireframeSection from "@/components/WireframeSection";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -19,7 +18,6 @@ const Index = () => {
         <AnalysisSection />
         <WireframeSection />
       </main>
-      <Footer />
     </div>
   );
 };

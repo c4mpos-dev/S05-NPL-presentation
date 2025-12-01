@@ -1,8 +1,26 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ListChecks, Network, GitBranch } from "lucide-react";
+import { ListChecks, Network, GitBranch, DownloadCloud } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const AnalysisSection = () => {
+  const downloadImage = async (src: string, filename?: string) => {
+    try {
+      const res = await fetch(src);
+      if (!res.ok) throw new Error("Falha ao buscar a imagem");
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename || src.split("/").pop() || "image.png";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Erro ao baixar imagem:", err);
+    }
+  };
   return (
     <section id="analysis" className="section-padding">
       <div className="container-width">
@@ -15,13 +33,13 @@ const AnalysisSection = () => {
           </p>
         </div>
 
-        <Tabs defaultValue="task" className="max-w-5xl mx-auto animate-fade-in-up">
+        <Tabs defaultValue="task" className="max-w-7xl mx-auto animate-fade-in-up">
           <TabsList className="grid w-full grid-cols-2 mb-8">
             <TabsTrigger value="task" className="text-base">
               Análise da Tarefa
             </TabsTrigger>
             <TabsTrigger value="flow" className="text-base">
-              Fluxo de Informação
+              Diagrama de classes
             </TabsTrigger>
           </TabsList>
 
@@ -136,6 +154,7 @@ const AnalysisSection = () => {
                     com cada passo da hierarquia correspondendo a elementos visuais e interações 
                     específicas na interface do aplicativo.
                   </p>
+                  <img src="/Análise Da Tarefa.jpg" alt="" className="w-full"/>
                 </div>
               </CardContent>
             </Card>
@@ -144,53 +163,33 @@ const AnalysisSection = () => {
           <TabsContent value="flow">
             <Card className="border-2 hover:border-primary/50 transition-all shadow-elegant">
               <CardHeader className="bg-gradient-to-r from-accent/5 to-transparent">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <Network className="h-6 w-6 text-accent" />
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                      <Network className="h-6 w-6 text-accent" />
+                    </div>
+                    <CardTitle className="font-heading text-2xl">
+                      Fluxo de Informação
+                    </CardTitle>
                   </div>
-                  <CardTitle className="font-heading text-2xl">
-                    Fluxo de Informação
-                  </CardTitle>
+
+                  <div>
+                    <Button variant="ghost" size="sm" onClick={() => downloadImage('/classDiagram.svg', 'classDiagram.svg')}>
+                      <DownloadCloud className="w-4 h-4 mr-2" />
+                      Baixar Diagrama (Se não estiver conseguindo ler)
+                    </Button>
+                  </div>
                 </div>
               </CardHeader>
               <CardContent className="pt-6 space-y-6">
-                <div>
-                  <h3 className="font-heading font-semibold text-xl mb-3">
-                    Diagrama de Classes
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Estrutura de dados e relacionamentos entre componentes, 
-                    definindo como a informação flui através do sistema.
-                  </p>
-                  <div className="bg-muted/30 rounded-lg p-6 border-2 border-dashed border-border">
-                    <div className="flex items-center justify-center gap-4 flex-wrap">
-                      <div className="p-4 bg-background rounded-lg border-2 border-primary/30 hover:border-primary/60 transition-colors">
-                        <GitBranch className="h-8 w-8 text-primary mx-auto mb-2" />
-                        <p className="text-sm font-semibold text-center">Entrada</p>
-                      </div>
-                      <div className="text-2xl text-muted-foreground">→</div>
-                      <div className="p-4 bg-background rounded-lg border-2 border-accent/30 hover:border-accent/60 transition-colors">
-                        <GitBranch className="h-8 w-8 text-accent mx-auto mb-2" />
-                        <p className="text-sm font-semibold text-center">Processamento</p>
-                      </div>
-                      <div className="text-2xl text-muted-foreground">→</div>
-                      <div className="p-4 bg-background rounded-lg border-2 border-primary/30 hover:border-primary/60 transition-colors">
-                        <GitBranch className="h-8 w-8 text-primary mx-auto mb-2" />
-                        <p className="text-sm font-semibold text-center">Saída</p>
-                      </div>
-                    </div>
+                <div className="space-y-6">
+                  <div className="flex justify-center">
+                    <img src="/diagrama1.png" alt="Diagrama 1" className="" />
                   </div>
-                </div>
 
-                <div className="pt-4 border-t border-border">
-                  <h3 className="font-heading font-semibold text-xl mb-3">
-                    Integração com Interface
-                  </h3>
-                  <p className="text-muted-foreground">
-                    O fluxo de informação está diretamente mapeado para elementos visuais 
-                    na interface, criando uma experiência coesa onde cada interação do 
-                    usuário corresponde a uma ação no sistema.
-                  </p>
+                  <div className="flex justify-center">
+                    <img src="/diagrama2.png" alt="Diagrama 2" className="" />
+                  </div>
                 </div>
               </CardContent>
             </Card>
